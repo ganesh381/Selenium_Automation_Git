@@ -1,5 +1,6 @@
 package CashierBank;
 
+import java.io.IOException;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -11,6 +12,8 @@ import org.testng.annotations.Test;
 import org.testng.annotations.AfterClass;
 
 import PageObject.CashierLogin;
+import Screenshot.Screencapture;
+
 
 public class CashierbankLogin_TC {
 	public WebDriver driver;
@@ -40,17 +43,17 @@ public class CashierbankLogin_TC {
 	}
 	
 	@Test
-	public void verify_Cashier_Login() {
+	public void verify_Cashier_Login() throws IOException {
 		// Test steps for cashier login would go here
-		
+		//IO exception is used for handling the exception that may occur while taking a screenshot
 		CashierLogin cashierLogin = new CashierLogin(driver);
 		cashierLogin.emaildd("cashier@gmail.com");
 		cashierLogin.password("123");
 		cashierLogin.login();
-		
+		//take screenshot of the cashier dashboard
+		Screencapture.captureScreenshot(driver, "CashierDashboard");
 		
 	}
-	
 	
 	
 	

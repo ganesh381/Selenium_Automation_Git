@@ -5,11 +5,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+
+import com.google.common.base.Strings;
+
 public class CashierLogin extends PageBase {
 
 	public CashierLogin(WebDriver driver) {
 		super(driver);
-		PageFactory.initElements(driver, this);
+		//PageFactory.initElements(driver, this);
 		// TODO Auto-generated constructor stub
 	}
 	@FindBy(xpath="/html/body/div[2]/div/div/form/div[1]/input")
